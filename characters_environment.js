@@ -52,6 +52,14 @@ var gameConfig={
 /*====================================
 =            Status do Jogo             =
 ====================================*/
+let noseX = "";
+let noseY = "";
+let GameStatus = "";
+
+function startGame() {
+  GameStatus = "start";
+  document.getElementById("status").innerHTML = "O jogo está começando..."
+}
 
 function game(){
 
@@ -67,7 +75,7 @@ function game(){
     fill(255, 255, 255);
     textSize(40);
     textAlign(CENTER);
-    text("Pressione qualquer tecla direcional para iniciar o jogo", gameConfig.screenX/2, gameConfig.screenY/2);
+    text("Pressione o botão 'Jogar' para iniciar o jogo", gameConfig.screenX/2, gameConfig.screenY/2);
     textSize(40);
 
     stroke(255);
@@ -115,7 +123,7 @@ function game(){
 
 // modifique o status do jogo se qualquer tecla for pressionada
 function changeGameStatud(character){
-  if((keyDown(control.up) ||keyDown(control.left)||keyDown(control.right) )&& gameConfig.status==="start") {
+  if(GameStatus === "start" && noseX != ""&& gameConfig.status==="start") {
     world_start.play();
     initializeCharacterStatus(mario);
     gameConfig.status= "play";
