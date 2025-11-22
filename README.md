@@ -1,5 +1,5 @@
 
-# Filtro-de-Cor
+# Mario-com-Nariz
 
 Recriação do jogo do Mario onde você se movimenta pelo nariz aplicando conceitos de IA para fins educativos.
 
